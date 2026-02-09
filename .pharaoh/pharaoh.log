@@ -1,0 +1,146 @@
+[2026-02-09 16:33:46] [INFO] Pharaoh server starting {"pid":23211,"cwd":"/Users/adam/Development/adamrdrew.github.io"}
+[2026-02-09 16:33:46] [INFO] Pharaoh starting {"version":"unknown","cwd":"/Users/adam/Development/adamrdrew.github.io"}
+[2026-02-09 16:33:46] [INFO] Serving directory {"cwd":"/Users/adam/Development/adamrdrew.github.io","dispatchPath":"/Users/adam/Development/adamrdrew.github.io/.pharaoh/dispatch"}
+[2026-02-09 16:33:46] [INFO] Watcher started {"path":"/Users/adam/Development/adamrdrew.github.io/.pharaoh/dispatch"}
+[2026-02-09 16:33:46] [INFO] Pharaoh server ready {"dispatchPath":"/Users/adam/Development/adamrdrew.github.io/.pharaoh/dispatch"}
+[2026-02-09 16:33:51] [INFO] Shutting down gracefully
+[2026-02-09 16:33:51] [INFO] Shutting down gracefully
+[2026-02-09 16:33:51] [INFO] Watcher stopped
+[2026-02-09 16:33:51] [INFO] Shutdown complete
+[2026-02-09 16:33:51] [INFO] Shutdown complete
+[2026-02-09 16:33:53] [INFO] Pharaoh server starting {"pid":23236,"cwd":"/Users/adam/Development/adamrdrew.github.io"}
+[2026-02-09 16:33:53] [INFO] Pharaoh starting {"version":"unknown","cwd":"/Users/adam/Development/adamrdrew.github.io"}
+[2026-02-09 16:33:53] [INFO] Serving directory {"cwd":"/Users/adam/Development/adamrdrew.github.io","dispatchPath":"/Users/adam/Development/adamrdrew.github.io/.pharaoh/dispatch"}
+[2026-02-09 16:33:53] [INFO] Watcher started {"path":"/Users/adam/Development/adamrdrew.github.io/.pharaoh/dispatch"}
+[2026-02-09 16:33:53] [INFO] Pharaoh server ready {"dispatchPath":"/Users/adam/Development/adamrdrew.github.io/.pharaoh/dispatch"}
+[2026-02-09 16:36:25] [INFO] Processing dispatch file {"path":"/Users/adam/Development/adamrdrew.github.io/.pharaoh/dispatch/0001-create-project-scaffolding.md"}
+[2026-02-09 16:36:25] [INFO] Dispatch file parsed {"path":"/Users/adam/Development/adamrdrew.github.io/.pharaoh/dispatch/0001-create-project-scaffolding.md","phase":"0001-create-project-scaffolding","model":"opus"}
+[2026-02-09 16:36:25] [WARN] Working tree is not clean
+[2026-02-09 16:36:25] [INFO] Starting phase execution {"phase":"0001-create-project-scaffolding"}
+[2026-02-09 16:36:30] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":1}
+[2026-02-09 16:36:32] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":2}
+[2026-02-09 16:36:36] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":3}
+[2026-02-09 16:36:40] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":4}
+[2026-02-09 16:36:42] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":5}
+[2026-02-09 16:36:44] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":6}
+[2026-02-09 16:36:51] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":7}
+[2026-02-09 16:36:54] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":8}
+[2026-02-09 16:36:56] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":9}
+[2026-02-09 16:37:00] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":10}
+[2026-02-09 16:37:03] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":11}
+[2026-02-09 16:37:04] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":12}
+[2026-02-09 16:37:04] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":13}
+[2026-02-09 16:37:05] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":14}
+[2026-02-09 16:37:08] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":15}
+[2026-02-09 16:37:09] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":16}
+[2026-02-09 16:37:11] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":17}
+[2026-02-09 16:37:15] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":18}
+[2026-02-09 16:37:16] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":19}
+[2026-02-09 16:37:16] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":20}
+[2026-02-09 16:37:16] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":21}
+[2026-02-09 16:37:17] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":22}
+[2026-02-09 16:37:32] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":23}
+[2026-02-09 16:37:44] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":24}
+[2026-02-09 16:38:01] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":25}
+[2026-02-09 16:38:04] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":26}
+[2026-02-09 16:38:16] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":27}
+[2026-02-09 16:38:17] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":28}
+[2026-02-09 16:38:19] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":29}
+[2026-02-09 16:38:21] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":30}
+[2026-02-09 16:38:25] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":31}
+[2026-02-09 16:38:28] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":32}
+[2026-02-09 16:38:30] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":33}
+[2026-02-09 16:38:34] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":34}
+[2026-02-09 16:38:36] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":35}
+[2026-02-09 16:38:36] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":36}
+[2026-02-09 16:38:39] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":37}
+[2026-02-09 16:38:40] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":38}
+[2026-02-09 16:38:41] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":39}
+[2026-02-09 16:38:42] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":40}
+[2026-02-09 16:38:47] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":41}
+[2026-02-09 16:38:50] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":42}
+[2026-02-09 16:38:50] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":43}
+[2026-02-09 16:38:51] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":44}
+[2026-02-09 16:38:51] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":45}
+[2026-02-09 16:38:52] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":46}
+[2026-02-09 16:38:52] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":47}
+[2026-02-09 16:38:57] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":48}
+[2026-02-09 16:39:01] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":49}
+[2026-02-09 16:39:09] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":50}
+[2026-02-09 16:39:14] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":51}
+[2026-02-09 16:39:17] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":52}
+[2026-02-09 16:39:20] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":53}
+[2026-02-09 16:39:56] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":54}
+[2026-02-09 16:40:01] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":55}
+[2026-02-09 16:40:03] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":56}
+[2026-02-09 16:40:07] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":57}
+[2026-02-09 16:40:11] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":58}
+[2026-02-09 16:40:14] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":59}
+[2026-02-09 16:40:17] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":60}
+[2026-02-09 16:40:20] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":61}
+[2026-02-09 16:40:24] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":62}
+[2026-02-09 16:40:26] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":63}
+[2026-02-09 16:40:29] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":64}
+[2026-02-09 16:40:33] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":65}
+[2026-02-09 16:40:36] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":66}
+[2026-02-09 16:40:40] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":67}
+[2026-02-09 16:40:44] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":68}
+[2026-02-09 16:40:49] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":69}
+[2026-02-09 16:40:53] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":70}
+[2026-02-09 16:40:56] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":71}
+[2026-02-09 16:40:59] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":72}
+[2026-02-09 16:41:05] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":73}
+[2026-02-09 16:41:13] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":74}
+[2026-02-09 16:41:18] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":75}
+[2026-02-09 16:41:21] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":76}
+[2026-02-09 16:41:25] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":77}
+[2026-02-09 16:41:39] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":78}
+[2026-02-09 16:41:40] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":79}
+[2026-02-09 16:41:45] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":80}
+[2026-02-09 16:41:46] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":81}
+[2026-02-09 16:41:49] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":82}
+[2026-02-09 16:41:53] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":83}
+[2026-02-09 16:41:57] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":84}
+[2026-02-09 16:42:00] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":85}
+[2026-02-09 16:42:05] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":86}
+[2026-02-09 16:42:07] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":87}
+[2026-02-09 16:42:08] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":88}
+[2026-02-09 16:42:08] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":89}
+[2026-02-09 16:42:12] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":90}
+[2026-02-09 16:42:15] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":91}
+[2026-02-09 16:42:16] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":92}
+[2026-02-09 16:42:16] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":93}
+[2026-02-09 16:42:17] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":94}
+[2026-02-09 16:42:20] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":95}
+[2026-02-09 16:42:20] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":96}
+[2026-02-09 16:42:21] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":97}
+[2026-02-09 16:42:21] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":98}
+[2026-02-09 16:42:22] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":99}
+[2026-02-09 16:42:25] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":100}
+[2026-02-09 16:42:26] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":101}
+[2026-02-09 16:42:27] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":102}
+[2026-02-09 16:42:31] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":103}
+[2026-02-09 16:42:32] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":104}
+[2026-02-09 16:42:35] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":105}
+[2026-02-09 16:42:38] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":106}
+[2026-02-09 16:42:43] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":107}
+[2026-02-09 16:43:11] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":108}
+[2026-02-09 16:43:28] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":109}
+[2026-02-09 16:43:32] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":110}
+[2026-02-09 16:43:33] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":111}
+[2026-02-09 16:43:46] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":112}
+[2026-02-09 16:43:47] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":113}
+[2026-02-09 16:43:50] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":114}
+[2026-02-09 16:43:53] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":115}
+[2026-02-09 16:44:05] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":116}
+[2026-02-09 16:44:07] [DEBUG] Assistant message received {"phase":"0001-create-project-scaffolding","message":117}
+[2026-02-09 16:44:09] [INFO] Phase completed successfully {"phase":"0001-create-project-scaffolding","turns":21,"maxTurns":200,"costUsd":3.1294867500000003,"durationMs":463615}
+[2026-02-09 16:44:13] [DEBUG] Status check assistant message had no text content {"messageKeys":["type","message","parent_tool_use_id","session_id","uuid"]}
+[2026-02-09 16:44:18] [DEBUG] Status check assistant message had no text content {"messageKeys":["type","message","parent_tool_use_id","session_id","uuid"]}
+[2026-02-09 16:44:22] [DEBUG] Status check assistant message had no text content {"messageKeys":["type","message","parent_tool_use_id","session_id","uuid"]}
+[2026-02-09 16:44:24] [DEBUG] Status check assistant message had no text content {"messageKeys":["type","message","parent_tool_use_id","session_id","uuid"]}
+[2026-02-09 16:44:27] [DEBUG] Status check assistant message had no text content {"messageKeys":["type","message","parent_tool_use_id","session_id","uuid"]}
+[2026-02-09 16:44:29] [DEBUG] Status check assistant message had no text content {"messageKeys":["type","message","parent_tool_use_id","session_id","uuid"]}
+[2026-02-09 16:44:31] [DEBUG] Status check content extracted {"type":"assistant","length":105}
+[2026-02-09 16:44:31] [DEBUG] Status check raw output {"outputLength":105,"outputPreview":"PHASE_STATUS:\n  slug: 0001-project-scaffolding\n  status: complete\n  steps_implemented: 8\n  steps_total: 8","parsedStatus":"complete"}
+[2026-02-09 16:44:31] [INFO] Phase verification complete {"phase":"0001-create-project-scaffolding","sdkSuccess":true,"phaseStatus":"complete"}

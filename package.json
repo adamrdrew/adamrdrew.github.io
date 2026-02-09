@@ -1,0 +1,27 @@
+{
+  "name": "adamrdrew.github.io",
+  "version": "1.0.0",
+  "description": "Personal website for project portfolio, about me, and articles/posts built with Astro",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "check": "astro check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamrdrew/adamrdrew.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamrdrew/adamrdrew.github.io/issues"
+  },
+  "homepage": "https://github.com/adamrdrew/adamrdrew.github.io#readme",
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.17.1",
+    "typescript": "^5.9.3"
+  }
+}
