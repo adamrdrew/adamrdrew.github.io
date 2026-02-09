@@ -1,0 +1,69 @@
+phase:
+  id: "0002"
+  slug: basic-site-setup
+  title: Basic Site Setup
+  status: complete
+
+steps:
+  - id: S001
+    title: Create BaseLayout component
+    implemented: true
+    reviewed: true
+    notes: "Created BaseLayout.astro with HTML shell, navigation links to Home/About/Blog, and slot for child content"
+    touched:
+      - src/layouts/BaseLayout.astro
+
+  - id: S002
+    title: Update index page to use BaseLayout
+    implemented: true
+    reviewed: true
+    notes: "Updated index.astro to import and use BaseLayout, removed duplicate HTML structure"
+    touched:
+      - src/pages/index.astro
+
+  - id: S003
+    title: Create About page
+    implemented: true
+    reviewed: true
+    notes: "Created about.astro with bio content including name, title, experience, interests, and employer"
+    touched:
+      - src/pages/about.astro
+
+  - id: S004
+    title: Define blog content collection schema
+    implemented: true
+    reviewed: true
+    notes: "Created src/content/config.ts with blog collection schema requiring title, publishDate, and description"
+    touched:
+      - src/content/config.ts
+
+  - id: S005
+    title: Create blog content directory and sample post
+    implemented: true
+    reviewed: true
+    notes: "Created src/content/blog/ directory with welcome.md sample post containing valid frontmatter"
+    touched:
+      - src/content/blog/welcome.md
+
+  - id: S006
+    title: Create blog listing page
+    implemented: true
+    reviewed: true
+    notes: "Created blog/index.astro using getCollection to query and display all posts sorted by date"
+    touched:
+      - src/pages/blog/index.astro
+
+  - id: S007
+    title: Verify navigation links
+    implemented: true
+    reviewed: true
+    notes: "Navigation links are in place in BaseLayout pointing to /, /about, and /blog. Will be verified during S008 build check."
+    touched: []
+
+  - id: S008
+    title: Run quality gate checks
+    implemented: true
+    reviewed: true
+    notes: "Both astro check and astro build pass successfully. Fixed type hints in blog/index.astro for clean output. dist/ directory created with 3 pages."
+    touched:
+      - src/pages/blog/index.astro
