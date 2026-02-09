@@ -1,6 +1,8 @@
 # Build output
 dist/
 
+.pharoah/
+
 # Dependencies
 node_modules/
 
