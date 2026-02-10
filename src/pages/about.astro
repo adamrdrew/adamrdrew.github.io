@@ -3,19 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="About">
-  <article>
-    <h1>About</h1>
-    <section>
-      <h2>Adam Drew</h2>
-      <p><strong>Senior Software Engineer</strong></p>
-      <p>I have 30+ years of experience building software systems.</p>
-      <p>My key interests include:</p>
-      <ul>
+  <article class="space-y-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-8">About</h1>
+    <section class="space-y-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-text-primary">Adam Drew</h2>
+      <p class="text-lg text-text-secondary leading-relaxed"><strong class="font-semibold text-accent-primary">Senior Software Engineer</strong></p>
+      <p class="text-text-secondary leading-relaxed">I have 30+ years of experience building software systems.</p>
+      <p class="text-text-secondary leading-relaxed">My key interests include:</p>
+      <ul class="list-disc list-inside space-y-2 text-text-secondary ml-4">
         <li>Agentic AI development</li>
         <li>Open source</li>
         <li>Developer tools</li>
       </ul>
-      <p>I currently work at <strong>Red Hat</strong>.</p>
+      <p class="text-text-secondary leading-relaxed">I currently work at <strong class="font-semibold text-accent-primary">Red Hat</strong>.</p>
     </section>
   </article>
 </BaseLayout>
