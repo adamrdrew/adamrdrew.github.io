@@ -2,7 +2,7 @@ phase:
   id: "0005"
   slug: update-home-page-text
   title: Update Home Page Text
-  status: building
+  status: review
 
 steps:
   - id: S001
@@ -15,7 +15,7 @@ steps:
 
   - id: S002
     title: Verify build and type checking
-    implemented: false
+    implemented: true
     reviewed: false
-    notes: ""
+    notes: "Build succeeded with exit code 0. Astro check passed with 0 errors, 0 warnings, 0 hints. Verified index.astro contains correct text content."
     touched: []
