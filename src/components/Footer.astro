@@ -2,14 +2,14 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-border bg-background-secondary mt-12">
+<footer class="border-t border-border dark:border-border-dark bg-background-secondary dark:bg-background-dark-secondary mt-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between space-y-2 sm:space-y-0 text-text-muted text-sm">
+    <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between space-y-2 sm:space-y-0 text-text-muted dark:text-text-dark-muted text-sm">
       <p>© {currentYear} Adam Drew</p>
       <div class="flex space-x-6">
         <a
           href="https://github.com/adamrdrew"
-          class="hover:text-accent-primary transition-colors duration-200"
+          class="hover:text-accent-primary dark:hover:text-accent-dark-primary transition-colors duration-200"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -17,7 +17,7 @@ const currentYear = new Date().getFullYear();
         </a>
         <a
           href="/blog"
-          class="hover:text-accent-primary transition-colors duration-200"
+          class="hover:text-accent-primary dark:hover:text-accent-dark-primary transition-colors duration-200"
         >
           Blog
         </a>

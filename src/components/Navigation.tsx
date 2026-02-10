@@ -11,7 +11,7 @@ interface NavigationProps {
 
 export default function Navigation({ links }: NavigationProps) {
   return (
-    <Disclosure as="nav" className="bg-background-secondary border-b border-border">
+    <Disclosure as="nav" className="bg-background-secondary dark:bg-background-dark-secondary border-b border-border dark:border-border-dark">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +22,7 @@ export default function Navigation({ links }: NavigationProps) {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="text-text-secondary hover:text-accent-primary transition-colors duration-200"
+                    className="text-text-secondary dark:text-text-dark-secondary hover:text-accent-primary dark:hover:text-accent-dark-primary transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -31,7 +31,7 @@ export default function Navigation({ links }: NavigationProps) {
 
               {/* Mobile menu button */}
               <div className="md:hidden">
-                <DisclosureButton className="inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-accent-primary hover:bg-background-tertiary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-primary">
+                <DisclosureButton className="inline-flex items-center justify-center p-2 rounded-md text-text-secondary dark:text-text-dark-secondary hover:text-accent-primary dark:hover:text-accent-dark-primary hover:bg-background-tertiary dark:hover:bg-background-dark-tertiary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-primary dark:focus:ring-accent-dark-primary">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <svg
@@ -78,7 +78,7 @@ export default function Navigation({ links }: NavigationProps) {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-text-secondary hover:text-accent-primary hover:bg-background-tertiary transition-colors duration-200"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-text-secondary dark:text-text-dark-secondary hover:text-accent-primary dark:hover:text-accent-dark-primary hover:bg-background-tertiary dark:hover:bg-background-dark-tertiary transition-colors duration-200"
                 >
                   {link.label}
                 </a>

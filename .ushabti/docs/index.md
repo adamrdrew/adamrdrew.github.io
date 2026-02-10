@@ -18,11 +18,51 @@ The site uses **Tailwind CSS v3** for utility-first styling. All components and 
 
 - **File**: `tailwind.config.mjs`
 - **Content paths**: Scans `.astro`, `.tsx`, `.ts`, `.jsx`, `.js`, `.md`, `.mdx` files in `src/`
-- **Color palette**: Dark theme developer portfolio colors defined in `theme.extend.colors`
-  - Background colors: slate-900, slate-800, slate-700
-  - Text colors: slate-50, slate-300, slate-400
-  - Accent colors: blue-500, violet-500, blue-600
+- **Dark mode strategy**: `darkMode: 'media'` enables automatic theme detection via CSS `@media (prefers-color-scheme: dark)` queries
 - **Typography**: System font stacks for sans and monospace
+
+### Theme System
+
+The site supports automatic light/dark mode switching based on the user's operating system preference. This is implemented using Tailwind's `media` dark mode strategy, which requires **zero JavaScript** and prevents flash of unstyled content (FOUC).
+
+#### Color Palette
+
+**Light Theme (default)**:
+- Background colors: white, slate-50, slate-100
+- Text colors: slate-900, slate-700, slate-500
+- Accent colors: blue-600, violet-600, blue-700
+- Border: slate-300
+
+**Dark Theme** (applied via `dark:` utilities):
+- Background colors: slate-900, slate-800, slate-700 (referenced as `background-dark-primary`, etc.)
+- Text colors: slate-50, slate-300, slate-400 (referenced as `text-dark-primary`, etc.)
+- Accent colors: blue-500, violet-500, blue-600 (referenced as `accent-dark-primary`, etc.)
+- Border: slate-600 (referenced as `border-dark`)
+
+#### How It Works
+
+1. **CSS Media Queries**: Tailwind generates `@media (prefers-color-scheme: dark)` queries for all `dark:` variant utilities
+2. **No JavaScript Required**: Theme detection happens entirely in CSS, aligned with **L03** (zero JavaScript by default)
+3. **Automatic Switching**: Theme updates immediately when system preference changes, no page reload needed
+4. **No FOUC**: Because detection is CSS-based, there is no flash of incorrect theme on page load
+
+#### Component Implementation
+
+All components use paired light/dark utilities:
+- Light mode: `bg-background-primary text-text-primary`
+- Dark mode: `dark:bg-background-dark-primary dark:text-text-dark-primary`
+
+Every color utility that depends on theme has a corresponding `dark:` variant.
+
+#### Why `media` Strategy
+
+The `media` strategy was chosen over `class` strategy because:
+- No JavaScript required for theme detection (aligns with **L03**)
+- Respects user's system-wide preference automatically
+- Prevents FOUC without inline scripts
+- Simpler implementation (no toggle UI, no localStorage management)
+
+This approach prioritizes respecting user preferences and shipping minimal JavaScript over providing manual theme override controls.
 
 ### Integration Configuration
 

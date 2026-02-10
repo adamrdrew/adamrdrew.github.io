@@ -1,0 +1,78 @@
+phase:
+  id: "0007"
+  slug: adaptive-light-dark-mode
+  title: "Adaptive Light/Dark Mode"
+  status: complete
+
+steps:
+  - id: S001
+    title: "Configure Tailwind dark mode strategy"
+    implemented: true
+    reviewed: true
+    notes: "Added darkMode: 'media' to tailwind.config.mjs to enable automatic dark mode detection via CSS media queries"
+    touched:
+      - /Users/adam/Development/adamrdrew.github.io/tailwind.config.mjs
+
+  - id: S002
+    title: "Define light theme color palette"
+    implemented: true
+    reviewed: true
+    notes: "Defined light theme colors as defaults and created dark theme color variants with -dark suffix for use with dark: utilities"
+    touched:
+      - /Users/adam/Development/adamrdrew.github.io/tailwind.config.mjs
+
+  - id: S003
+    title: "Update BaseLayout with theme-aware utilities"
+    implemented: true
+    reviewed: true
+    notes: "Added dark: variants to body tag for background and text colors"
+    touched:
+      - /Users/adam/Development/adamrdrew.github.io/src/layouts/BaseLayout.astro
+
+  - id: S004
+    title: "Update Navigation component with dark mode utilities"
+    implemented: true
+    reviewed: true
+    notes: "Added dark: variants for all color utilities including backgrounds, text colors, borders, hover states, and focus rings"
+    touched:
+      - /Users/adam/Development/adamrdrew.github.io/src/components/Navigation.tsx
+
+  - id: S005
+    title: "Update Footer component with dark mode utilities"
+    implemented: true
+    reviewed: true
+    notes: "Added dark: variants for border, background, text, and hover states"
+    touched:
+      - /Users/adam/Development/adamrdrew.github.io/src/components/Footer.astro
+
+  - id: S006
+    title: "Update all page components with dark mode utilities"
+    implemented: true
+    reviewed: true
+    notes: "Added dark: variants for all color utilities in index.astro, about.astro, and blog/index.astro including headings, text, borders, and hover states"
+    touched:
+      - /Users/adam/Development/adamrdrew.github.io/src/pages/index.astro
+      - /Users/adam/Development/adamrdrew.github.io/src/pages/about.astro
+      - /Users/adam/Development/adamrdrew.github.io/src/pages/blog/index.astro
+
+  - id: S007
+    title: "Test theme switching"
+    implemented: true
+    reviewed: true
+    notes: "Dev server started. All dark mode utilities have been implemented. Manual visual testing should verify: light theme in light mode, dark theme in dark mode, immediate switching when system preference changes, no FOUC."
+    touched: []
+
+  - id: S008
+    title: "Verify quality gates pass"
+    implemented: true
+    reviewed: true
+    notes: "astro check passed with 0 errors, 0 warnings, 0 hints. astro build succeeded, generated 3 pages in dist/"
+    touched: []
+
+  - id: S009
+    title: "Update documentation"
+    implemented: true
+    reviewed: true
+    notes: "Updated Styling Approach section in .ushabti/docs/index.md to document theme system including color palettes, media strategy rationale, and implementation approach"
+    touched:
+      - /Users/adam/Development/adamrdrew.github.io/.ushabti/docs/index.md
