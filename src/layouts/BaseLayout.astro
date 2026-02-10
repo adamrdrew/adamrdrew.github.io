@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -26,5 +27,6 @@ const navLinks = [
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <slot />
   </main>
+  <Footer />
 </body>
 </html>

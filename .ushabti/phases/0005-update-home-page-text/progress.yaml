@@ -1,0 +1,21 @@
+phase:
+  id: "0005"
+  slug: update-home-page-text
+  title: Update Home Page Text
+  status: building
+
+steps:
+  - id: S001
+    title: Update home page text content
+    implemented: true
+    reviewed: false
+    notes: "Changed title prop from 'Hello World' to 'Adam Drew' and updated h1 text content to match. File saved."
+    touched:
+      - src/pages/index.astro
+
+  - id: S002
+    title: Verify build and type checking
+    implemented: false
+    reviewed: false
+    notes: ""
+    touched: []

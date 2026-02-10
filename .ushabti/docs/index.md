@@ -42,6 +42,29 @@ Tailwind was adopted to:
 
 All pages and layouts use only Tailwind utilities. No scoped styles remain.
 
+## Layout Components
+
+### Footer Component
+
+- **File**: `src/components/Footer.astro`
+- **Type**: Static server-rendered component (ships zero JavaScript)
+- **Purpose**: Site-wide footer with copyright and navigation links
+- **Integration**: Imported in `src/layouts/BaseLayout.astro`, appears on all pages
+- **Key Features**:
+  - Dynamic copyright year calculated in frontmatter via `new Date().getFullYear()`
+  - External link to GitHub profile (https://github.com/adamrdrew)
+  - Internal link to Blog (/blog)
+  - Responsive horizontal layout: stacked on mobile (`flex-col`), side-by-side on tablet+ (`sm:flex-row`)
+- **Styling**:
+  - Uses only Tailwind utility classes (per **L07**)
+  - Matches Navigation component patterns: `hover:text-accent-primary`, `transition-colors duration-200`
+  - Dark theme colors: `bg-background-secondary`, `border-border`, `text-text-muted`
+  - Semantic HTML: `<footer>` element
+- **Relevant Laws**:
+  - **L03**: Footer is server-rendered with no client directives, ships zero JavaScript
+  - **L07**: No scoped `<style>` tags, uses only Tailwind utilities
+  - **L09**: Correctly placed in `src/components/`, not `src/pages/`
+
 ## Interactive Components
 
 The site uses **Headless UI React** for accessible interactive components. Currently implemented:
