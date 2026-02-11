@@ -2,7 +2,7 @@ phase:
   id: "0009"
   slug: complete-blog-system
   title: Complete Blog System with Dynamic Routes and Enhanced Schema
-  status: building
+  status: complete
 
 steps:
   - id: S001
