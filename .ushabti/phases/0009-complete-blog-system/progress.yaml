@@ -2,7 +2,7 @@ phase:
   id: "0009"
   slug: complete-blog-system
   title: Complete Blog System with Dynamic Routes and Enhanced Schema
-  status: review
+  status: building
 
 steps:
   - id: S001
@@ -77,3 +77,9 @@ steps:
     touched:
       - src/layouts/BlogPostLayout.astro
       - src/pages/blog/[slug].astro
+  - id: S010
+    title: Correct BlogPostLayout documentation
+    implemented: false
+    reviewed: false
+    notes: ""
+    touched: []

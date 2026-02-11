@@ -179,3 +179,19 @@
 - Manual verification confirms all blog functionality works
 - No broken links or rendering issues
 - Light and dark themes work correctly on all blog pages
+
+---
+
+## S010: Correct BlogPostLayout documentation
+
+**Intent**: Fix documentation drift identified during Overseer review. The documented Props interface includes a `description` field that doesn't exist in the actual implementation.
+
+**Work**:
+- Edit `.ushabti/docs/index.md` in the "Blog System > Layout > Props interface" section
+- Remove `description: string;` from the Props interface code block
+- Ensure the documented interface matches the actual implementation (title, publishDate, readingTime, tags only)
+
+**Done when**:
+- Documentation Props interface block shows only: `title: string`, `publishDate: Date`, `readingTime: number`, `tags: string[]`
+- No reference to `description` field in BlogPostLayout Props documentation
+- Documentation accurately reflects the code in `src/layouts/BlogPostLayout.astro`
