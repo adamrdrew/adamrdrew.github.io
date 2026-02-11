@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Projects">
+  <article class="space-y-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-text-primary dark:text-text-dark-primary mb-8">Projects</h1>
+    <section class="space-y-4">
+      <p class="text-lg text-text-secondary dark:text-text-dark-secondary leading-relaxed">Open-source tools for AI-assisted development and project management.</p>
+    </section>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <article class="border border-slate-300 dark:border-slate-600 rounded-lg p-6 bg-white dark:bg-slate-800 hover:border-accent-primary dark:hover:border-accent-dark-primary transition-colors duration-200">
+        <h2 class="text-2xl font-semibold text-text-primary dark:text-text-dark-primary mb-3">Ushabti</h2>
+        <p class="text-text-secondary dark:text-text-dark-secondary leading-relaxed mb-4">AI-driven development framework</p>
+        <a href="/ushabti" class="text-accent-primary dark:text-accent-dark-primary hover:underline">Learn more →</a>
+      </article>
+      <article class="border border-slate-300 dark:border-slate-600 rounded-lg p-6 bg-white dark:bg-slate-800 hover:border-accent-primary dark:hover:border-accent-dark-primary transition-colors duration-200">
+        <h2 class="text-2xl font-semibold text-text-primary dark:text-text-dark-primary mb-3">Pharaoh</h2>
+        <p class="text-text-secondary dark:text-text-dark-secondary leading-relaxed mb-4">Headless job runner for Ushabti</p>
+        <a href="/pharaoh" class="text-accent-primary dark:text-accent-dark-primary hover:underline">Learn more →</a>
+      </article>
+      <article class="border border-slate-300 dark:border-slate-600 rounded-lg p-6 bg-white dark:bg-slate-800 hover:border-accent-primary dark:hover:border-accent-dark-primary transition-colors duration-200">
+        <h2 class="text-2xl font-semibold text-text-primary dark:text-text-dark-primary mb-3">Hieroglyphs</h2>
+        <p class="text-text-secondary dark:text-text-dark-secondary leading-relaxed mb-4">Project management for indie devs</p>
+        <a href="/hieroglyphs" class="text-accent-primary dark:text-accent-dark-primary hover:underline">Learn more →</a>
+      </article>
+    </section>
+  </article>
+</BaseLayout>

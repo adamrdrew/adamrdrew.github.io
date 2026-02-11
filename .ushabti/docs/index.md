@@ -247,6 +247,101 @@ Out of scope for current implementation but possible future additions:
 - Pagination for listing page
 - Related posts suggestions
 
+## Projects Section
+
+The site includes a projects landing page that serves as an index for all project detail pages. This section showcases Adam's open-source work.
+
+### Projects Landing Page
+
+**File**: `src/pages/projects.astro`
+**Route**: `/projects`
+
+The projects landing page displays a card grid of all projects with links to individual detail pages. This provides a single entry point for exploring Adam's open-source work.
+
+**Key Features**:
+- Introductory text describing the projects section
+- Responsive grid layout: single column on mobile, two columns on `md` breakpoint and above (`grid-cols-1 md:grid-cols-2`)
+- Three project cards: Ushabti, Pharaoh, Hieroglyphs
+- Each card contains:
+  - Project name as `<h2>` heading
+  - One-sentence description
+  - "Learn more →" link to detail page
+
+**Styling**:
+- Uses only Tailwind utility classes (per **L07**)
+- Cards have borders (`border-slate-300 dark:border-slate-600`) and hover effects (`hover:border-accent-primary`)
+- All color utilities have corresponding `dark:` variants for dark mode support
+- Semantic HTML: `<article>` for main container and individual cards, `<section>` for grid container
+
+**Implementation Pattern**:
+- Static page with hardcoded project data (three projects, unlikely to change frequently)
+- Server-rendered with zero JavaScript (per **L03**)
+- Uses `BaseLayout` with title "Projects"
+- All markup inline in page file (no separate component)
+
+### Project Detail Pages
+
+The site includes three project detail pages that provide in-depth information about individual open-source projects.
+
+#### Ushabti Project Page
+
+**File**: `src/pages/ushabti.astro`
+**Route**: `/ushabti`
+
+Describes Ushabti, a disciplined development framework for AI-assisted code generation. The page includes:
+- Project overview and description
+- Key agents: Scribe, Builder, Overseer
+- Link to GitHub repository (https://github.com/adamrdrew/ushabti)
+
+#### Pharaoh Project Page
+
+**File**: `src/pages/pharaoh.astro`
+**Route**: `/pharaoh`
+
+Describes Pharaoh, a headless job runner for Ushabti. The page follows the same structure and styling as the Ushabti page.
+
+#### Hieroglyphs Project Page
+
+**File**: `src/pages/hieroglyphs.astro`
+**Route**: `/hieroglyphs`
+
+Describes Hieroglyphs, a project management tool for indie developers. The page follows the same structure and styling as the other project detail pages.
+
+### Common Project Page Pattern
+
+All project detail pages follow a consistent structure:
+- Use `BaseLayout` with project name as title
+- Large heading with project name (`text-4xl md:text-5xl font-bold`)
+- Multiple `<section>` elements with `space-y-4` spacing
+- Semantic HTML: `<article>` for main content, `<section>` for logical sections, `<h2>` for subsection headings
+- Text styling with `text-text-secondary dark:text-text-dark-secondary` for body text
+- Accent-colored strong elements and links (`text-accent-primary dark:text-accent-dark-primary`)
+- Inline `<code>` elements styled with `bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded text-sm`
+
+**Styling Consistency**:
+- All pages use only Tailwind utilities (per **L07**)
+- Consistent heading sizes, spacing, and color pairings across all pages
+- All color utilities have `dark:` variants for dark mode support
+
+**Relevant Laws**:
+- **L01**: File-system routing — each `.astro` file in `src/pages/` creates a route
+- **L03**: All pages are server-rendered, ship zero JavaScript
+- **L04**: Data and imports in frontmatter fence, HTML template below
+- **L05**: Layout applied by wrapping content with `BaseLayout`
+- **L07**: Use Tailwind utilities only, no scoped `<style>` tags
+- **L09**: Page files correctly placed in `src/pages/`
+
+### Adding a New Project
+
+To add a new project to the site:
+
+1. Create a new detail page: `src/pages/project-name.astro`
+2. Follow the common project page pattern (semantic HTML structure, consistent heading styles, Tailwind utilities)
+3. Add a new card to the projects landing page (`src/pages/projects.astro`) with project name, description, and link
+4. Ensure all color utilities have corresponding `dark:` variants
+
+Currently, the projects landing page uses hardcoded static content. If the number of projects grows significantly, consider migrating to a content collection approach similar to the blog system.
+
 ## Table of Contents
 
 <!-- Populated by Surveyor -->
