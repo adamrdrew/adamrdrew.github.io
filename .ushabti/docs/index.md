@@ -135,6 +135,118 @@ The React integration (`@astrojs/react`) enables using React components as Astro
 - **L07**: No scoped styles exist. All styling uses Tailwind utilities or `className` in React components.
 - **L08**: Tailwind and React integrations registered in `astro.config.mjs`.
 
+## Blog System
+
+The site includes a fully functional blog system using Astro's content collections API. Adding a new blog post is as simple as creating a Markdown file in `src/content/blog/`.
+
+### Content Collection
+
+**Location**: `src/content/blog/`
+
+Blog posts are stored as Markdown files (`.md`) in the blog content collection. Each file's name becomes its URL slug (e.g., `welcome.md` → `/blog/welcome`).
+
+### Schema
+
+**Definition**: `src/content/config.ts`
+
+The blog collection schema enforces the following frontmatter structure:
+
+```typescript
+{
+  title: string;              // Required: Post title
+  publishDate: Date;          // Required: Publication date (YYYY-MM-DD format)
+  description: string;        // Required: Meta description and excerpt
+  tags: string[];            // Optional: Array of tags (default: [])
+  featured: boolean;         // Optional: Featured status (default: false)
+  excerpt: string;           // Optional: Custom excerpt override
+}
+```
+
+**Required fields** must be present in every post. **Optional fields** have defaults and can be omitted.
+
+### Routing
+
+**Dynamic route**: `src/pages/blog/[slug].astro`
+
+Individual blog posts are accessible at `/blog/{slug}` URLs via Astro's file-system routing (**L01**). The `getStaticPaths()` function generates routes for all posts in the collection at build time.
+
+**Listing page**: `src/pages/blog/index.astro`
+
+Displays all posts sorted by publication date (newest first). Post titles link to individual post pages.
+
+### Layout
+
+**Component**: `src/layouts/BlogPostLayout.astro`
+
+The blog post layout wraps `BaseLayout` and provides post-specific structure:
+- Post title as `<h1>`
+- Publication date formatted as "Month Day, Year"
+- Reading time estimate (calculated from word count)
+- Tags displayed as colored pills
+- Markdown content rendered via `<Content />` component (**L10**)
+
+**Props interface**:
+```typescript
+{
+  title: string;
+  publishDate: Date;
+  readingTime: number;
+  tags: string[];
+  description: string;
+}
+```
+
+The layout uses semantic HTML (`<article>`, `<header>`, `<time>`) and Tailwind utilities for styling (**L07**).
+
+### Reading Time Calculation
+
+**Utility**: `src/lib/calculateReadingTime.ts`
+
+Estimates reading time based on word count using a 200 words per minute heuristic. Returns ceiling of minutes (e.g., 3.2 minutes → 4 minutes).
+
+**Usage**:
+```typescript
+import calculateReadingTime from '../lib/calculateReadingTime';
+const readingTime = calculateReadingTime(post.body);
+```
+
+### Adding a New Post
+
+1. Create a new Markdown file in `src/content/blog/` with a URL-friendly name (e.g., `my-post.md`)
+2. Add required frontmatter fields: `title`, `publishDate`, `description`
+3. Optionally add `tags`, `featured`, or `excerpt`
+4. Write content in clean Markdown (no HTML or component imports)
+5. Build the site: the post automatically appears on `/blog` and is accessible at `/blog/my-post`
+
+**Example**:
+```markdown
+---
+title: "My First Post"
+publishDate: 2026-02-10
+description: "A short description of this post."
+tags: ["example", "tutorial"]
+featured: false
+---
+
+# My First Post
+
+Content goes here...
+```
+
+### Relevant Laws
+
+- **L01**: File-system routing — `[slug].astro` creates dynamic routes
+- **L02**: Content collections require schema definition in `src/content/config.ts`
+- **L10**: Markdown rendered through `<Content />` component from content collections API
+
+### Future Enhancements
+
+Out of scope for current implementation but possible future additions:
+- RSS feed generation
+- Tag archive pages
+- Pagination for listing page
+- Related posts suggestions
+
 ## Table of Contents
 
 <!-- Populated by Surveyor -->
