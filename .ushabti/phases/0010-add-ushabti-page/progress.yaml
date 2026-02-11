@@ -1,0 +1,30 @@
+phase:
+  id: "0010"
+  slug: add-ushabti-page
+  title: Add Ushabti Project Page
+  status: complete
+
+steps:
+  - id: S001
+    title: Create ushabti.astro page with content
+    implemented: true
+    reviewed: true
+    notes: "Created ushabti.astro following about.astro patterns. Includes heading, tagline, description sections, key agents list, and GitHub link. Uses semantic HTML and consistent Tailwind classes with light/dark theme support."
+    touched:
+      - src/pages/ushabti.astro
+
+  - id: S002
+    title: Add Ushabti link to navigation
+    implemented: true
+    reviewed: true
+    notes: "Added Ushabti navigation link to navLinks array in BaseLayout.astro after Blog entry."
+    touched:
+      - src/layouts/BaseLayout.astro
+
+  - id: S003
+    title: Verify build succeeds
+    implemented: true
+    reviewed: true
+    notes: "Build completed successfully. Generated /ushabti/index.html in dist. Verified content and GitHub link present in output."
+    touched:
+      - dist/ushabti/index.html
