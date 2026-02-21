@@ -1,52 +1,102 @@
 /* ============================================================
-   adamrdrew.github.io — Global Styles
+   Property & Method — Global Styles
 
-   Design: content-first, clean, fast. No framework.
-   Typography: system font stack, generous line height.
-   Colour: dark background, warm light text. No pure white.
+   Design: Art Nouveau warmth meets modern tech clarity.
+   Typography: Cormorant Garamond headings, system sans body.
+   Colour: deep warm darks, Mucha-inspired accents.
+   Geometry: organic curves, deliberate negative space.
    ============================================================ */
 
 :root {
-  /* Colour palette */
-  --colour-bg: #1a1a2e;
-  --colour-bg-raised: #22223a;
-  --colour-bg-hover: #2a2a45;
-  --colour-text: #e0ddd5;
-  --colour-text-muted: #9a9790;
-  --colour-text-dim: #6b6860;
-  --colour-accent: #c8a876;
-  --colour-accent-hover: #d4b98a;
-  --colour-link: #8ab4c8;
-  --colour-link-hover: #a8cede;
-  --colour-border: #333350;
-  --colour-code-bg: #16162a;
-  --colour-tag-bg: #2a2a45;
+  /* ---- Palette: Mucha meets Midnight ---- */
 
-  /* Typography */
+  /* Backgrounds — warm darks, not cool purples */
+  --colour-bg:          #1c1a17;   /* Aged walnut shadow */
+  --colour-bg-raised:   #252320;   /* Raised surface */
+  --colour-bg-hover:    #2e2b27;   /* Interactive hover */
+
+  /* Text — warm ivories, not cool greys */
+  --colour-text:        #ede8df;   /* Warm ivory */
+  --colour-text-muted:  #a39e93;   /* Muted parchment */
+  --colour-text-dim:    #706b62;   /* Dim earth */
+
+  /* Accents — three tiers from Mucha's palette */
+  --colour-accent:        #b08d57;   /* Brass Gold — primary */
+  --colour-accent-hover:  #c4a06a;   /* Brass Gold lighter */
+  --colour-accent-glow:   rgba(176, 141, 87, 0.15);  /* Gold halo */
+
+  --colour-sage:          #7a8d73;   /* Verdant Sage — secondary */
+  --colour-sage-hover:    #8ea387;
+  --colour-sage-muted:    rgba(122, 141, 115, 0.15);
+
+  --colour-rose:          #a55b6a;   /* Dusty Rose — tertiary */
+  --colour-rose-hover:    #bb6e7d;
+  --colour-rose-muted:    rgba(165, 91, 106, 0.15);
+
+  --colour-teal:          #5a8a8a;   /* Deep Teal — quaternary */
+  --colour-teal-muted:    rgba(90, 138, 138, 0.12);
+
+  --colour-amethyst:      #6d4a72;   /* Iris Amethyst — reserved */
+
+  /* Structural colours */
+  --colour-link:        #8ab4c8;   /* Soft sky — readable on dark */
+  --colour-link-hover:  #a8cede;
+  --colour-border:      #3a3630;   /* Warm border, not cold */
+  --colour-border-accent: rgba(176, 141, 87, 0.3); /* Gold-tinted border */
+  --colour-code-bg:     #18160f;   /* Deep code well */
+  --colour-tag-bg:      #2a2720;   /* Tag pill background */
+
+  /* Status */
+  --colour-active:      #7a8d73;   /* Sage for "active" */
+  --colour-stable:      #b08d57;   /* Gold for "stable" */
+
+  /* ---- Typography ---- */
+
+  /* Heading: Cormorant Garamond — high-contrast serif,
+     sharp geometric serifs, Art Nouveau architectural quality */
+  --font-heading: 'Cormorant Garamond', 'Garamond', 'Times New Roman', serif;
+
+  /* Body: system stack — fast, native, readable */
   --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
-  --font-size-base: 1rem;
-  --font-size-sm: 0.875rem;
-  --font-size-xs: 0.75rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.5rem;
-  --font-size-2xl: 2rem;
-  --font-size-3xl: 2.5rem;
-  --line-height: 1.7;
 
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
+  /* Mono: crafted monospace for code */
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
+
+  /* Scale — modular, based on 1.25 ratio */
+  --font-size-xs:   0.75rem;    /* 12px */
+  --font-size-sm:   0.875rem;   /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg:   1.125rem;   /* 18px */
+  --font-size-xl:   1.5rem;     /* 24px */
+  --font-size-2xl:  2rem;       /* 32px */
+  --font-size-3xl:  2.5rem;     /* 40px */
+  --font-size-4xl:  3.5rem;     /* 56px — hero size */
+  --line-height:    1.7;
+
+  /* ---- Spacing ---- */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
   --space-2xl: 3rem;
   --space-3xl: 4rem;
+  --space-4xl: 6rem;
 
-  /* Layout */
+  /* ---- Layout ---- */
   --content-width: 42rem;
   --page-width: 64rem;
   --nav-height: 3.5rem;
+
+  /* ---- Decorative ---- */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --transition-fast: 0.15s ease;
+  --transition-med:  0.25s ease;
+
+  /* Art Nouveau decorative line — SVG encoded */
+  --ornament-rule: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' fill='none'%3E%3Cpath d='M0 10 Q50 0 100 10 Q150 20 200 10' stroke='%23b08d57' stroke-width='1' opacity='0.4'/%3E%3C/svg%3E");
 }
 
 /* ---- Reset ---- */
@@ -63,6 +113,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -77,14 +128,32 @@ body {
 /* ---- Typography ---- */
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.3;
+  font-family: var(--font-heading);
+  line-height: 1.2;
   font-weight: 600;
   color: var(--colour-text);
+  letter-spacing: -0.01em;
 }
 
-h1 { font-size: var(--font-size-3xl); margin-bottom: var(--space-lg); }
-h2 { font-size: var(--font-size-2xl); margin-bottom: var(--space-md); margin-top: var(--space-2xl); }
-h3 { font-size: var(--font-size-xl); margin-bottom: var(--space-sm); margin-top: var(--space-xl); }
+h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  margin-top: var(--space-2xl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  margin-top: var(--space-xl);
+}
 
 p {
   margin-bottom: var(--space-md);
@@ -93,7 +162,7 @@ p {
 a {
   color: var(--colour-link);
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
@@ -116,13 +185,13 @@ code {
   font-size: var(--font-size-sm);
   background: var(--colour-code-bg);
   padding: 0.15em 0.4em;
-  border-radius: 3px;
+  border-radius: var(--border-radius-sm);
 }
 
 pre {
   background: var(--colour-code-bg);
   padding: var(--space-lg);
-  border-radius: 6px;
+  border-radius: var(--border-radius-md);
   overflow-x: auto;
   margin-bottom: var(--space-lg);
   border: 1px solid var(--colour-border);
@@ -152,14 +221,21 @@ blockquote {
   color: var(--colour-text-muted);
   margin-bottom: var(--space-lg);
   font-style: italic;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
 }
 
-/* ---- Horizontal rule ---- */
+/* ---- Horizontal rule — Art Nouveau wave ---- */
 
 hr {
   border: none;
-  border-top: 1px solid var(--colour-border);
+  height: 20px;
+  background-image: var(--ornament-rule);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px 20px;
   margin: var(--space-2xl) 0;
+  opacity: 0.6;
 }
 
 /* ---- Images ---- */
@@ -167,7 +243,14 @@ hr {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: var(--border-radius-md);
+}
+
+/* ---- Selection ---- */
+
+::selection {
+  background: var(--colour-accent-glow);
+  color: var(--colour-text);
 }
 
 /* ---- Utility ---- */

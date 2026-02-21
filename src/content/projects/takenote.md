@@ -1,19 +1,20 @@
 ---
 title: TakeNote
-description: Markdown note-taking app for Apple platforms. Native SwiftUI on Mac, iPad, and iPhone. iCloud sync, live preview, keyboard-first.
+description: Markdown note-taking app for macOS and iOS. Native SwiftUI with Apple Intelligence features, iCloud sync, and a source-available licence.
 repo: https://github.com/adamrdrew/TakeNote
 status: active
-tags: [swift, swiftui, macos, ios, markdown, notes]
+tags: [swift, swiftui, macos, ios, markdown, apple-intelligence]
 order: 3
 ---
 
-TakeNote is a native markdown editor for Mac, iPad, and iPhone, built entirely in SwiftUI. It stores notes as plain `.md` files in iCloud Drive, so your notes are always accessible outside the app — in Finder, in any text editor, on any device.
+TakeNote is a native markdown editor for macOS and iOS, built in SwiftUI with SwiftData and CloudKit. It syncs seamlessly across Apple devices via iCloud and integrates Apple Intelligence for AI-powered writing assistance.
 
 Features:
-- **Live markdown preview** with syntax highlighting
+- **AI summaries** — automatic note summarisation via Apple Intelligence
+- **Magic Format** — AI turns plain text into structured Markdown
+- **Magic Assistant** — contextual AI suggestions for highlighted text
 - **iCloud sync** across all Apple devices
-- **Keyboard-first** design — everything is reachable without the mouse
-- **File-based storage** — no proprietary database, no lock-in
-- **Universal app** — a single codebase for Mac, iPad, and iPhone
+- **Folders, Tags, and Favourites** — Finder-inspired organisation
+- **Universal app** — one codebase for Mac, iPad, and iPhone
 
-TakeNote is what happens when you want Bear or iA Writer but don't want to surrender your files to an opaque sync engine. Your notes are files. Full stop.
+TakeNote is source-available: free to clone, build, and run for personal use. Contributions welcome. Requires macOS 26 or iOS 26.

@@ -6,7 +6,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Base title="Blog" description="Writing from Adam Drew and Alan on software, agentic development, and everything in between.">
+<Base title="Blog" description="Writing from Property &amp; Method on software, agentic development, and everything in between.">
   <div class="blog-page">
     <h1>Blog</h1>
     <p class="subtitle">Two voices, one workshop. Adam writes in his. Alan writes in his.</p>
@@ -78,7 +78,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .post-title {
     font-weight: 500;
     font-size: var(--font-size-lg);
-    transition: color 0.15s ease;
+    transition: color var(--transition-fast);
   }
 
   .post-description {

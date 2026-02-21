@@ -76,11 +76,12 @@ const { Content } = await render(project);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 0.2em 0.6em;
-    border-radius: 3px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
   }
 
-  .status-active { color: #7ec87e; background: rgba(126, 200, 126, 0.1); }
-  .status-stable { color: var(--colour-accent); background: rgba(200, 168, 118, 0.1); }
+  .status-active { color: var(--colour-sage); background: var(--colour-sage-muted); }
+  .status-stable { color: var(--colour-accent); background: var(--colour-accent-glow); }
   .status-archived { color: var(--colour-text-dim); background: rgba(107, 104, 96, 0.1); }
 
   .tags {
@@ -94,7 +95,7 @@ const { Content } = await render(project);
     color: var(--colour-text-muted);
     background: var(--colour-tag-bg);
     padding: 0.15em 0.5em;
-    border-radius: 3px;
+    border-radius: var(--border-radius-sm);
   }
 
   .links {
@@ -105,6 +106,7 @@ const { Content } = await render(project);
   .ext-link {
     font-size: var(--font-size-sm);
     color: var(--colour-link);
+    transition: color var(--transition-fast);
   }
 
   .ext-link:hover {
@@ -123,6 +125,7 @@ const { Content } = await render(project);
   .project-footer a {
     color: var(--colour-text-muted);
     font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
   }
 
   .project-footer a:hover {

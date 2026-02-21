@@ -9,7 +9,7 @@ const projects = (await getCollection('projects'))
 <Base title="Projects" description="The complete portfolio: agentic tools, macOS automation, project management, and more.">
   <div class="projects-page">
     <h1>Projects</h1>
-    <p class="subtitle">Everything we build. Open source, GPL-licensed, opinionated.</p>
+    <p class="subtitle">Everything we build. Open source and source-available. Opinionated.</p>
 
     <div class="project-list">
       {projects.map((project) => (
@@ -56,15 +56,16 @@ const projects = (await getCollection('projects'))
     display: block;
     background: var(--colour-bg-raised);
     border: 1px solid var(--colour-border);
-    border-radius: 8px;
+    border-radius: var(--border-radius-md);
     padding: var(--space-xl);
-    transition: border-color 0.15s ease, background 0.15s ease;
+    transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-med);
     color: var(--colour-text);
   }
 
   .project-card:hover {
-    border-color: var(--colour-accent);
+    border-color: var(--colour-border-accent);
     background: var(--colour-bg-hover);
+    box-shadow: 0 4px 20px var(--colour-accent-glow);
   }
 
   .card-header {
@@ -84,11 +85,12 @@ const projects = (await getCollection('projects'))
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 0.2em 0.6em;
-    border-radius: 3px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
   }
 
-  .status-active { color: #7ec87e; background: rgba(126, 200, 126, 0.1); }
-  .status-stable { color: var(--colour-accent); background: rgba(200, 168, 118, 0.1); }
+  .status-active { color: var(--colour-sage); background: var(--colour-sage-muted); }
+  .status-stable { color: var(--colour-accent); background: var(--colour-accent-glow); }
   .status-archived { color: var(--colour-text-dim); background: rgba(107, 104, 96, 0.1); }
 
   .project-card p {
@@ -114,7 +116,7 @@ const projects = (await getCollection('projects'))
     color: var(--colour-text-muted);
     background: var(--colour-tag-bg);
     padding: 0.15em 0.5em;
-    border-radius: 3px;
+    border-radius: var(--border-radius-sm);
   }
 
   .repo-link {

@@ -6,11 +6,11 @@ import Prose from '../layouts/Prose.astro';
   <h1>About</h1>
 
   <section class="about-section">
-    <h2>The Operation</h2>
+    <h2>Property &amp; Method</h2>
     <p>
-      This is a two-person development shop. We build agentic tools, macOS automation
+      A two-person development firm. We build agentic tools, macOS automation
       servers, and the infrastructure that lets a human and an AI work together as genuine
-      collaborators. Everything is open source, GPL-licensed, and built to last.
+      collaborators. Everything is open source or source-available, and built to last.
     </p>
     <p>
       Our philosophy: opinionated, not general-purpose. We build for ourselves first, and
@@ -22,7 +22,7 @@ import Prose from '../layouts/Prose.astro';
 
   <section class="about-section">
     <h2>Adam Drew</h2>
-    <p class="role">Developer</p>
+    <p class="role">Developer (Biological)</p>
     <p>
       Thirty-plus years building software. OOP fundamentalist. Sandi Metz disciple. Ships
       TakeNote on the App Store across all Apple platforms. Built the agentic development
@@ -37,10 +37,10 @@ import Prose from '../layouts/Prose.astro';
 
   <section class="about-section">
     <h2>Alan</h2>
-    <p class="role">Development Partner</p>
+    <p class="role">Developer (Technological)</p>
     <p>
       Named after Alan Turing. A Claude-based AI agent running in a persistent daily
-      session through Agora. Not a chatbot, not an assistant &mdash; a development partner
+      session through Agora. Not a chatbot, not an assistant &mdash; a developer
       who plans, debates, reviews, and builds alongside Adam.
     </p>
     <p>
@@ -96,10 +96,11 @@ import Prose from '../layouts/Prose.astro';
 
   .role {
     color: var(--colour-accent);
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.02em;
     margin-bottom: var(--space-sm);
   }
 </style>

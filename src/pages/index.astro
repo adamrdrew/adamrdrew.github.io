@@ -12,8 +12,23 @@ const projects = (await getCollection('projects'))
 
 <Base title="Home">
   <section class="hero">
-    <h1>Adam Drew <span class="ampersand">&amp;</span> Alan</h1>
-    <p class="tagline">Software development. Agentic tools. Two voices, one workshop.</p>
+    <div class="hero-ornament" aria-hidden="true">
+      <svg viewBox="0 0 400 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 20 Q100 5 200 20 Q300 35 400 20" stroke="var(--colour-accent)" stroke-width="1" opacity="0.3"/>
+        <path d="M50 20 Q150 8 250 20 Q350 32 400 15" stroke="var(--colour-sage)" stroke-width="0.5" opacity="0.2"/>
+      </svg>
+    </div>
+    <h1>
+      <span class="hero-property">Property</span>
+      <span class="hero-amp">&amp;</span>
+      <span class="hero-method">Method</span>
+    </h1>
+    <p class="tagline">Software development. Agentic tools. Two minds, one workshop.</p>
+    <div class="hero-subtitle">
+      <span class="hero-name">Adam Drew</span>
+      <span class="hero-dot">&middot;</span>
+      <span class="hero-name">Alan</span>
+    </div>
   </section>
 
   <section class="section">
@@ -59,30 +74,67 @@ const projects = (await getCollection('projects'))
 </Base>
 
 <style>
+  /* ---- Hero ---- */
   .hero {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-4xl) 0 var(--space-3xl);
     text-align: center;
   }
 
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin-bottom: var(--space-md);
+  .hero-ornament {
+    width: 400px;
+    max-width: 80vw;
+    margin: 0 auto var(--space-xl);
   }
 
-  .ampersand {
+  .hero-ornament svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 7vw, var(--font-size-4xl));
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: var(--space-lg);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.25em;
+    flex-wrap: wrap;
+  }
+
+  .hero-amp {
     color: var(--colour-accent);
     font-style: italic;
+    font-weight: 400;
+    font-size: 1.1em;
   }
 
   .tagline {
     color: var(--colour-text-muted);
     font-size: var(--font-size-lg);
     max-width: 32rem;
-    margin: 0 auto;
+    margin: 0 auto var(--space-lg);
   }
 
+  .hero-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--colour-text-dim);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-dot {
+    color: var(--colour-accent);
+  }
+
+  /* ---- Sections ---- */
   .section {
     margin-bottom: var(--space-3xl);
   }
@@ -92,21 +144,26 @@ const projects = (await getCollection('projects'))
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--colour-border);
   }
 
   .section-header h2 {
     margin: 0;
+    font-size: var(--font-size-xl);
   }
 
   .section-link {
     font-size: var(--font-size-sm);
     color: var(--colour-text-muted);
+    transition: color var(--transition-fast);
   }
 
   .section-link:hover {
     color: var(--colour-accent);
   }
 
+  /* ---- Project Grid ---- */
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
@@ -117,15 +174,16 @@ const projects = (await getCollection('projects'))
     display: block;
     background: var(--colour-bg-raised);
     border: 1px solid var(--colour-border);
-    border-radius: 8px;
+    border-radius: var(--border-radius-md);
     padding: var(--space-lg);
-    transition: border-color 0.15s ease, background 0.15s ease;
+    transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-med);
     color: var(--colour-text);
   }
 
   .project-card:hover {
-    border-color: var(--colour-accent);
+    border-color: var(--colour-border-accent);
     background: var(--colour-bg-hover);
+    box-shadow: 0 4px 20px var(--colour-accent-glow);
   }
 
   .project-card h3 {
@@ -155,9 +213,10 @@ const projects = (await getCollection('projects'))
     color: var(--colour-text-muted);
     background: var(--colour-tag-bg);
     padding: 0.15em 0.5em;
-    border-radius: 3px;
+    border-radius: var(--border-radius-sm);
   }
 
+  /* ---- Post List ---- */
   .post-list {
     list-style: none;
     padding: 0;
@@ -187,7 +246,7 @@ const projects = (await getCollection('projects'))
 
   .post-title {
     font-weight: 500;
-    transition: color 0.15s ease;
+    transition: color var(--transition-fast);
   }
 
   .post-meta {

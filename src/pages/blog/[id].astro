@@ -66,6 +66,9 @@ const { Content } = await render(post);
 
   .author {
     color: var(--colour-accent);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-style: italic;
   }
 
   .separator {
@@ -83,7 +86,7 @@ const { Content } = await render(post);
     color: var(--colour-text-muted);
     background: var(--colour-tag-bg);
     padding: 0.15em 0.5em;
-    border-radius: 3px;
+    border-radius: var(--border-radius-sm);
   }
 
   .post-body {
@@ -98,6 +101,7 @@ const { Content } = await render(post);
   .post-footer a {
     color: var(--colour-text-muted);
     font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
   }
 
   .post-footer a:hover {
