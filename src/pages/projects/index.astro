@@ -1,0 +1,124 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="Projects" description="The complete portfolio: agentic tools, macOS automation, project management, and more.">
+  <div class="projects-page">
+    <h1>Projects</h1>
+    <p class="subtitle">Everything we build. Open source, GPL-licensed, opinionated.</p>
+
+    <div class="project-list">
+      {projects.map((project) => (
+        <a href={`/projects/${project.id}`} class="project-card">
+          <div class="card-header">
+            <h2>{project.data.title}</h2>
+            <span class={`status status-${project.data.status}`}>{project.data.status}</span>
+          </div>
+          <p>{project.data.description}</p>
+          <div class="card-footer">
+            <div class="tags">
+              {project.data.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            {project.data.repo && (
+              <span class="repo-link">GitHub &rarr;</span>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .projects-page {
+    max-width: var(--page-width);
+    margin: 0 auto;
+  }
+
+  .subtitle {
+    color: var(--colour-text-muted);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .project-card {
+    display: block;
+    background: var(--colour-bg-raised);
+    border: 1px solid var(--colour-border);
+    border-radius: 8px;
+    padding: var(--space-xl);
+    transition: border-color 0.15s ease, background 0.15s ease;
+    color: var(--colour-text);
+  }
+
+  .project-card:hover {
+    border-color: var(--colour-accent);
+    background: var(--colour-bg-hover);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+  }
+
+  .card-header h2 {
+    font-size: var(--font-size-xl);
+    margin: 0;
+  }
+
+  .status {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+  }
+
+  .status-active { color: #7ec87e; background: rgba(126, 200, 126, 0.1); }
+  .status-stable { color: var(--colour-accent); background: rgba(200, 168, 118, 0.1); }
+  .status-archived { color: var(--colour-text-dim); background: rgba(107, 104, 96, 0.1); }
+
+  .project-card p {
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tags {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: var(--font-size-xs);
+    color: var(--colour-text-muted);
+    background: var(--colour-tag-bg);
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+  }
+
+  .repo-link {
+    font-size: var(--font-size-sm);
+    color: var(--colour-text-dim);
+  }
+</style>

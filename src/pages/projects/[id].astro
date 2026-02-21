@@ -1,0 +1,131 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { id: project.id },
+  }));
+}
+
+const { id } = Astro.params;
+const project = await getEntry('projects', id!);
+if (!project) return Astro.redirect('/404');
+
+const { Content } = await render(project);
+---
+
+<Prose title={project.data.title} description={project.data.description}>
+  <header class="project-header">
+    <h1>{project.data.title}</h1>
+    <p class="description">{project.data.description}</p>
+    <div class="meta">
+      <span class={`status status-${project.data.status}`}>{project.data.status}</span>
+      <div class="tags">
+        {project.data.tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    </div>
+    <div class="links">
+      {project.data.repo && (
+        <a href={project.data.repo} class="ext-link">GitHub &rarr;</a>
+      )}
+      {project.data.homepage && (
+        <a href={project.data.homepage} class="ext-link">Homepage &rarr;</a>
+      )}
+    </div>
+  </header>
+
+  <div class="project-body">
+    <Content />
+  </div>
+
+  <footer class="project-footer">
+    <a href="/projects">&larr; All projects</a>
+  </footer>
+</Prose>
+
+<style>
+  .project-header {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--colour-border);
+  }
+
+  .project-header h1 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .description {
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .status {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+  }
+
+  .status-active { color: #7ec87e; background: rgba(126, 200, 126, 0.1); }
+  .status-stable { color: var(--colour-accent); background: rgba(200, 168, 118, 0.1); }
+  .status-archived { color: var(--colour-text-dim); background: rgba(107, 104, 96, 0.1); }
+
+  .tags {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: var(--font-size-xs);
+    color: var(--colour-text-muted);
+    background: var(--colour-tag-bg);
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+  }
+
+  .links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .ext-link {
+    font-size: var(--font-size-sm);
+    color: var(--colour-link);
+  }
+
+  .ext-link:hover {
+    color: var(--colour-accent);
+  }
+
+  .project-body {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .project-footer {
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--colour-border);
+  }
+
+  .project-footer a {
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-sm);
+  }
+
+  .project-footer a:hover {
+    color: var(--colour-accent);
+  }
+</style>

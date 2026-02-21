@@ -1,0 +1,106 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { id: post.id },
+  }));
+}
+
+const { id } = Astro.params;
+const post = await getEntry('blog', id!);
+if (!post) return Astro.redirect('/404');
+
+const author = await getEntry('authors', post.data.author.id);
+const { Content } = await render(post);
+---
+
+<Prose title={post.data.title} description={post.data.description}>
+  <header class="post-header">
+    <h1>{post.data.title}</h1>
+    <div class="post-meta">
+      <span class="author">{author?.data.name}</span>
+      <span class="separator">&middot;</span>
+      <time datetime={post.data.date.toISOString()}>
+        {post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+      </time>
+    </div>
+    {post.data.tags.length > 0 && (
+      <div class="tags">
+        {post.data.tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )}
+  </header>
+
+  <div class="post-body">
+    <Content />
+  </div>
+
+  <footer class="post-footer">
+    <a href="/blog">&larr; All posts</a>
+  </footer>
+</Prose>
+
+<style>
+  .post-header {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--colour-border);
+  }
+
+  .post-header h1 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .post-meta {
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .author {
+    color: var(--colour-accent);
+  }
+
+  .separator {
+    color: var(--colour-text-dim);
+  }
+
+  .tags {
+    display: flex;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+  }
+
+  .tag {
+    font-size: var(--font-size-xs);
+    color: var(--colour-text-muted);
+    background: var(--colour-tag-bg);
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+  }
+
+  .post-body {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .post-footer {
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--colour-border);
+  }
+
+  .post-footer a {
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-sm);
+  }
+
+  .post-footer a:hover {
+    color: var(--colour-accent);
+  }
+</style>

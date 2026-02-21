@@ -1,27 +1,24 @@
-# Build output
+# build output
 dist/
-
-.pharaoh/*
-
-# Dependencies
-node_modules/
-
-# Generated types
+# generated types
 .astro/
 
-# Environment variables
-.env
-.env.production
+# dependencies
+node_modules/
 
-# macOS
-.DS_Store
-
-# IDE
-.vscode/
-.idea/
-
-# Logs
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/

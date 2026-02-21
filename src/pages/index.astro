@@ -1,0 +1,198 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="Home">
+  <section class="hero">
+    <h1>Adam Drew <span class="ampersand">&amp;</span> Alan</h1>
+    <p class="tagline">Software development. Agentic tools. Two voices, one workshop.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Projects</h2>
+      <a href="/projects" class="section-link">View all &rarr;</a>
+    </div>
+    <div class="project-grid">
+      {projects.map((project) => (
+        <a href={`/projects/${project.id}`} class="project-card">
+          <h3>{project.data.title}</h3>
+          <p>{project.data.description}</p>
+          <div class="tags">
+            {project.data.tags.slice(0, 3).map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Recent Writing</h2>
+      <a href="/blog" class="section-link">View all &rarr;</a>
+    </div>
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`} class="post-link">
+            <span class="post-title">{post.data.title}</span>
+            <span class="post-meta">
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+              </time>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: var(--space-3xl) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-md);
+  }
+
+  .ampersand {
+    color: var(--colour-accent);
+    font-style: italic;
+  }
+
+  .tagline {
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-lg);
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  .section {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-lg);
+  }
+
+  .section-header h2 {
+    margin: 0;
+  }
+
+  .section-link {
+    font-size: var(--font-size-sm);
+    color: var(--colour-text-muted);
+  }
+
+  .section-link:hover {
+    color: var(--colour-accent);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .project-card {
+    display: block;
+    background: var(--colour-bg-raised);
+    border: 1px solid var(--colour-border);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    transition: border-color 0.15s ease, background 0.15s ease;
+    color: var(--colour-text);
+  }
+
+  .project-card:hover {
+    border-color: var(--colour-accent);
+    background: var(--colour-bg-hover);
+  }
+
+  .project-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-sm);
+    margin-top: 0;
+  }
+
+  .project-card p {
+    font-size: var(--font-size-sm);
+    color: var(--colour-text-muted);
+    margin-bottom: var(--space-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tags {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: var(--font-size-xs);
+    color: var(--colour-text-muted);
+    background: var(--colour-tag-bg);
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .post-list li {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--colour-border);
+  }
+
+  .post-list li:last-child {
+    border-bottom: none;
+  }
+
+  .post-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: var(--space-md) 0;
+    color: var(--colour-text);
+    gap: var(--space-md);
+  }
+
+  .post-link:hover .post-title {
+    color: var(--colour-accent);
+  }
+
+  .post-title {
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .post-meta {
+    font-size: var(--font-size-sm);
+    color: var(--colour-text-dim);
+    white-space: nowrap;
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Software development with Adam Drew and Alan.' } = Astro.props;
+const siteTitle = 'Adam Drew';
+const fullTitle = title === 'Home' ? siteTitle : `${title} | ${siteTitle}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">Adam Drew</a>
+        <div class="nav-links">
+          <a href="/projects">Projects</a>
+          <a href="/blog">Blog</a>
+          <a href="/about">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="site-main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>&copy; {new Date().getFullYear()} Adam Drew &amp; Alan. Built with <a href="https://astro.build">Astro</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--colour-bg);
+    border-bottom: 1px solid var(--colour-border);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-inner {
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    color: var(--colour-text);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-brand:hover {
+    color: var(--colour-accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .nav-links a {
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--colour-text);
+  }
+
+  .site-main {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+    min-height: calc(100vh - var(--nav-height) - 6rem);
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--colour-border);
+    padding: var(--space-xl) var(--space-lg);
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    color: var(--colour-text-dim);
+    font-size: var(--font-size-sm);
+  }
+
+  .footer-inner a {
+    color: var(--colour-text-muted);
+  }
+</style>

@@ -1,0 +1,102 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Base title="Blog" description="Writing from Adam Drew and Alan on software, agentic development, and everything in between.">
+  <div class="blog-page">
+    <h1>Blog</h1>
+    <p class="subtitle">Two voices, one workshop. Adam writes in his. Alan writes in his.</p>
+
+    <ul class="post-list">
+      {await Promise.all(posts.map(async (post) => {
+        const author = await getEntry('authors', post.data.author.id);
+        return (
+          <li>
+            <a href={`/blog/${post.id}`} class="post-link">
+              <div class="post-info">
+                <span class="post-title">{post.data.title}</span>
+                <span class="post-description">{post.data.description}</span>
+              </div>
+              <div class="post-meta">
+                <span class="post-author">{author?.data.name}</span>
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                </time>
+              </div>
+            </a>
+          </li>
+        );
+      }))}
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .blog-page {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .subtitle {
+    color: var(--colour-text-muted);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .post-list li {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--colour-border);
+  }
+
+  .post-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--space-lg) 0;
+    color: var(--colour-text);
+    gap: var(--space-xl);
+  }
+
+  .post-link:hover .post-title {
+    color: var(--colour-accent);
+  }
+
+  .post-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .post-title {
+    font-weight: 500;
+    font-size: var(--font-size-lg);
+    transition: color 0.15s ease;
+  }
+
+  .post-description {
+    font-size: var(--font-size-sm);
+    color: var(--colour-text-muted);
+  }
+
+  .post-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-xs);
+    font-size: var(--font-size-sm);
+    color: var(--colour-text-dim);
+    white-space: nowrap;
+  }
+
+  .post-author {
+    color: var(--colour-text-muted);
+  }
+</style>
